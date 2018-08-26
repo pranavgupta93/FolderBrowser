@@ -1,0 +1,52 @@
+<div *ngIf="allFolders">
+<div *ngFor="let folder of allFolders;let i=index">
+  <span><i  class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i></span>
+  <span style="margin-left: 1%;;" (click)="openGPR(i)">{{folder.title}}</span>
+  <div *ngIf="showGPR==i" style="margin-left: 5%;">
+      <i class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i>  
+      <span  (click)="showInstallRD(i)">
+          Game play resources
+      </span>
+      <div *ngIf="showInstallFolder==i" style="margin-left: 5%">
+          <i class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i>
+          <span  (click)="showInstalls(i)">
+            Installation
+          </span>
+          <div *ngIf="showInstallFiles==i" style="margin-left: 5%">
+              <div>
+                  <i class="fa fa-file" style="color: gray" aria-hidden="true"></i>
+                  <span>
+                    {{folder['Game play resources'].Installation[0].file_name}}
+                  </span>
+              </div>
+            <div>
+                <i class="fa fa-file" style="color: gray" aria-hidden="true"></i>
+                <span>
+                  {{folder['Game play resources'].Installation[1].file_name}}
+                </span>
+            </div>
+          </div>
+      </div>
+      <div *ngIf="showInstallFolder==i" style="margin-left: 5%">
+          <i class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i>
+          <span (click)="showResource(i)">
+            Resource Dependency
+          </span>
+          <div *ngIf="showResourceFiles==i" style="margin-left: 5%">
+              <div>
+                  <i class="fa fa-file" style="color: gray" aria-hidden="true"></i>
+                  <span>
+                    {{folder['Game play resources']['Resource Dependency'][0].file_name}}
+                  </span>
+              </div>
+              <div>
+                  <i class="fa fa-file" style="color: gray" aria-hidden="true"></i>
+                  <span>
+                    {{folder['Game play resources']['Resource Dependency'][1].file_name}}
+                  </span>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+</div>

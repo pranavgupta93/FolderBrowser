@@ -1,0 +1,26 @@
+<div *ngIf="folderTitle && showFF=='false'">
+<span>
+    <h6>{{folderTitle}}</h6>
+</span>
+<div>
+    <i class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i>
+    Game Play Resources
+</div>
+
+</div>
+
+<div *ngIf="showFF=='true'">
+<h6>{{folderTitle}} > Game Play Resources
+
+</h6>
+
+<div>
+    <i class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i>
+  Installation
+</div>
+
+<div>
+    <i class="fa fa-folder" aria-hidden="true" style="color: #dada20"></i>
+  Resource Dependency
+</div>
+</div>
